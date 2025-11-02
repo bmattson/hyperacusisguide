@@ -161,9 +161,11 @@ body.hg-app {
    Main Content
 --------------------------------*/
 .main {
-  flex: 1;
-  padding: 20px 30px;
-  overflow: auto;
+  flex: 1 1 auto; 
+  padding: 20px 30px; /* normal desktop padding */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS if browser supports it */
+  box-sizing: border-box;
 }
 
 .card {
@@ -215,23 +217,25 @@ body.hg-app {
   }
   
   .main {
-    flex: 1;
-
-    /* Use full viewport minus fixed header */
-    height: calc(100vh - 56px);
-
-    /* Add safe area padding for notch and bottom UI */
-    padding-top: calc(22px + env(safe-area-inset-top));
+    /* Top padding includes header + extra spacing */
+    padding-top: calc(56px + 22px); 
+    
+    /* Bottom padding accounts for safe area */
     padding-bottom: calc(22px + env(safe-area-inset-bottom));
+    
+    /* Side padding for mobile */
     padding-left: 22px;
     padding-right: 22px;
-
-    /* Enable smooth scrolling on iOS */
+    
+    /* Make flexible height */
+    flex: 1 1 auto;
+    
+    /* Smooth scrolling for long content */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-
-    /* Box sizing includes padding */
-    box-sizing: border-box;
+    
+    /* Ensure main fills viewport for short content */
+    min-height: calc(100vh - 56px);
   }
 
   /* Close button (X) in top-right */
