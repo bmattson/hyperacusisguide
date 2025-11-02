@@ -19,7 +19,9 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100%;  
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
@@ -206,6 +208,9 @@ body.hg-app {
     transition: transform 0.28s ease;
     z-index: 90;
     padding-top: 56px;
+    height: calc(100vh - 56px); /* full viewport minus header height */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   }
 
   .sidebar.open {
