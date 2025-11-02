@@ -208,13 +208,30 @@ body.hg-app {
     transition: transform 0.28s ease;
     z-index: 90;
     padding-top: 56px;
-    height: calc(100vh - 56px); /* full viewport minus header height */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   }
 
   .sidebar.open {
     transform: translateX(0);
+  }
+  
+  .main {
+    flex: 1;
+
+    /* Use full viewport minus fixed header */
+    height: calc(100vh - 56px);
+
+    /* Add safe area padding for notch and bottom UI */
+    padding-top: calc(22px + env(safe-area-inset-top));
+    padding-bottom: calc(22px + env(safe-area-inset-bottom));
+    padding-left: 22px;
+    padding-right: 22px;
+
+    /* Enable smooth scrolling on iOS */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    /* Box sizing includes padding */
+    box-sizing: border-box;
   }
 
   /* Close button (X) in top-right */
