@@ -1,263 +1,85 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hyperacusis Guide</title>
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-
-  <!-- Styles -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mobile Story</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="hg-app">
+<body>
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <button class="close-btn" id="close-btn">✕</button>
-
-    <div class="brand">
-      <div class="logo"><i class="bi bi-ear-fill"></i></div>
-      <div class="brand-text">Hyperacusis Guide</div>
-    </div>
-
-    <nav class="menu" aria-label="Main">
-      <button class="menu-item active" data-page="about"><span class="menu-label">Our Purpose</span></button>
-      <button class="menu-item" data-page="what"><span class="menu-label">Precautionary Guide</span></button>
-      <button class="menu-item" data-page="imaging"><span class="menu-label">Diagnostic Imaging</span></button>
-      <button class="menu-item" data-page="articles"><span class="menu-label">Articles</span></button>
-      <button class="menu-item" data-page="resources"><span class="menu-label">Resources</span></button>
-      <button class="menu-item" data-page="contact"><span class="menu-label">Contact</span></button>
-    </nav>
-  </aside>
-
-  <!-- Mobile Header -->
-  <header class="mobile-header">
-    <button id="hamburger" aria-label="Open menu" class="hamburger">☰</button>
-    <div class="mobile-title">Hyperacusis Guide</div>
+  <!-- Sticky Header -->
+  <header class="header">
+    <button class="menu-btn" aria-label="Open Menu">☰</button>
+    <div class="header-title">Nightfall Tales</div>
   </header>
 
+  <!-- Full-screen Menu -->
+  <nav class="menu-overlay" id="menuOverlay">
+    <button class="close-menu" id="closeMenu" aria-label="Close Menu">✕</button>
+    <ul class="menu-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Stories</a></li>
+      <li><a href="#">Authors</a></li>
+      <li><a href="#">Genres</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Main Content -->
-  <main class="main">
-
-    <!-- Our Purpose -->
-    <section class="page active" id="page-about">
-      <div class="card">
-        <div class="card-label">Our Purpose</div>
-        <div class="card-text">
-          <p>
-            We are developing a new organization dedicated to supporting individuals with catastrophic hyperacusis and those at risk of rapid worsening. Our mission is to provide reliable, evidence-informed guidance, practical coping strategies, and a compassionate community where sufferers can connect with others who truly understand the challenges of extreme sound sensitivity.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Precautionary Guide -->
-    <section class="page" id="page-what">
-      <div class="card">
-        <div class="card-label">Precautionary Guide For New Hyperacusis Patients</div>
-        <div class="card-text">
-          <h2>Purpose</h2>
-          <p>To stabilize symptoms, prevent worsening, ensure accurate diagnosis and treatment planning, and give the best chance of improvement.</p>
-
-          <h2>Important Note</h2>
-          <p>This protocol offers cautionary advice based on evidence of proven worsening from sound exposures and aims to support recovery in the best way possible...</p>
-
-          <h2>1. Controlled, Predictable Sound Environment</h2>
-          <ul>
-            <li>Create a quiet home base where sound levels are predictable and consistently below your discomfort threshold.</li>
-            <li>Eliminate sudden, unpredictable noises (door slams, kitchen clatter, TV/radio, etc.).</li>
-            <li>Avoid any sound that causes pain, burning, flare-ups, or worsening of symptoms.</li>
-          </ul>
-
-          <h2>2. Protective Equipment Use</h2>
-          <ul>
-            <li>Use double protection: high-NRR foam earplugs plus quality over-the-ear earmuffs such as Peltor X5A.</li>
-            <li>Keep protection on for the full duration of the trip.</li>
-            <li>Keep spare plugs and muffs accessible at all times.</li>
-          </ul>
-
-          <h2>3. Digital Audio Elimination</h2>
-          <ul>
-            <li>No headphones, earbuds, or speakers playing music, podcasts, or videos.</li>
-            <li>Use live captioning, text, or email options instead of phone call audio.</li>
-            <li>Limit non-essential media until stability improves.</li>
-          </ul>
-
-          <h2>4. Homebound Voluntary Precaution</h2>
-          <ul>
-            <li>Minimize leaving home except for essential medical visits.</li>
-            <li>Maintain a low-noise environment through planned errands and deliveries.</li>
-          </ul>
-
-          <h2>5. Diagnostic Imaging</h2>
-          <ul>
-            <li>Schedule high-resolution CT scan of the temporal bones (≤ 0.6 mm slice thickness) to rule out structural causes.</li>
-            <li>Ensure both sides are imaged.</li>
-          </ul>
-
-          <h2>6. Specialist Review</h2>
-          <ul>
-            <li>Review imaging results with an ENT, otologist, or neurotologist experienced in relevant procedures.</li>
-          </ul>
-
-          <h2>7. Treatment Planning</h2>
-          <ul>
-            <li>Discuss possible interventions after imaging.</li>
-          </ul>
-
-          <h2>7.5. Time & Preparedness</h2>
-          <ul>
-            <li>Improvement takes time and varies by individual. Early preparedness is important.</li>
-          </ul>
-
-          <h2>8. Medication Caution</h2>
-          <ul>
-            <li>Avoid psychiatric medications unless absolutely necessary.</li>
-            <li>Use benzodiazepines only rarely, short-term if needed.</li>
-          </ul>
-
-          <h2>9. Lifestyle & Mental Health Support</h2>
-          <ul>
-            <li>Gentle movement practices (yoga, Tai Chi, Qigong).</li>
-            <li>Meditation, prayer, and quiet time in nature.</li>
-            <li>Light-to-moderate exercise within safe sound limits.</li>
-            <li>Healthy diet and stress management.</li>
-          </ul>
-
-          <h2>10. General Precautions</h2>
-          <ul>
-            <li>Avoid trial-and-error sound therapy.</li>
-            <li>Prioritize rest, sleep, and stress management.</li>
-            <li>Avoid procedures that may worsen your condition (e.g., MRI, dental ultrasonic cleaning).</li>
-          </ul>
-
-          <h2>11. Workplace & Disability Accommodations</h2>
-          <ul>
-            <li>Explore FMLA, ADA accommodations, disability benefits, and work-from-home options to minimize audio exposure.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Diagnostic Imaging -->
-    <section class="page" id="page-imaging">
-      <div class="card">
-        <div class="card-label">Diagnostic Imaging</div>
-        <div class="card-text">
-          <p>Diagnostic imaging plays a supportive role in evaluating severe hyperacusis and noxacusis.</p>
-
-          <h2>1. Purpose of Imaging</h2>
-          <ul>
-            <li>Rule out secondary causes.</li>
-            <li>Identify structural abnormalities in auditory or neurological pathways.</li>
-            <li>Guide management for atypical, asymmetric, or progressive symptoms.</li>
-          </ul>
-
-          <h2>2. Common Imaging Modalities</h2>
-          <h3>a. MRI</h3>
-          <ul>
-            <li>Preferred for unilateral or neurologically complex cases.</li>
-            <li>Detects vestibular schwannoma, vascular compression, demyelinating disease, brainstem lesions, SSCD.</li>
-          </ul>
-
-          <h3>b. CT</h3>
-          <ul>
-            <li>Best for bony and middle-ear abnormalities.</li>
-            <li>Detects SSCD, perilymph fistula, otosclerosis, ossicular defects.</li>
-          </ul>
-
-          <h3>c. Functional / Research Imaging</h3>
-          <ul>
-            <li>fMRI and PET show increased activation in auditory and limbic regions.</li>
-            <li>Supports central gain enhancement and emotional-auditory network dysfunction.</li>
-          </ul>
-
-          <h2>3. Clinical Indications</h2>
-          <ul>
-            <li>Unilateral or asymmetric symptoms</li>
-            <li>Auditory pain triggered by normal sound levels</li>
-            <li>Associated hearing loss or tinnitus</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Articles -->
-    <section class="page" id="page-articles">
-      <div class="card">
-        <div class="card-label">Articles</div>
-        <div class="card-text">
-          <p>Curated articles and guides about sound sensitivity, therapies, and coping strategies.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resources -->
-    <section class="page" id="page-resources">
-      <div class="card">
-        <div class="card-label">Resources</div>
-        <div class="card-text">
-          <p>Links to support groups, research papers, and clinician directories.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="page" id="page-contact">
-      <div class="card">
-        <div class="card-label">Contact</div>
-        <div class="card-text">
-          <p>Get in touch with the maintainers of Hyperacusis Guide.</p>
-        </div>
-      </div>
-    </section>
-
+  <main class="main-content">
+    <article class="story">
+      <h1>The Whispering Forest</h1>
+      <p>
+        At the edge of the village, where the mist clung to the ancient pines, Mara stepped lightly, her eyes tracing the shadows that danced between the trees. The air smelled of damp earth and secrets. Each step whispered beneath her feet, a soft echo of what once was.
+      </p>
+      <p>
+        A fox appeared briefly among the roots, its eyes reflecting the faint glow of fireflies. Mara paused, sensing that the forest was alive, listening. Leaves rustled in a language she almost understood. Somewhere, a stream murmured tales of time itself.
+      </p>
+      <p>
+        She walked deeper, heart quickening, until the path opened into a clearing. Moonlight spilled like silver across the ground. And there, beneath the oldest oak, a faint shimmer beckoned, promising a story she would never forget.
+      </p>
+      <p>
+        Mara stepped forward, and the forest exhaled, welcoming her into the night.
+      </p>
+      <p>
+        Hours passed as she wandered among the trees. The branches arched overhead like the vaulted ceilings of a cathedral, and somewhere far off, an owl hooted. Shadows shifted, forming shapes that might have been animals—or perhaps the memories of the forest itself.
+      </p>
+      <p>
+        She found a hidden pond, its surface perfectly still, reflecting the stars above. Kneeling, Mara traced her fingers along the cool water and glimpsed her own reflection, though it seemed older, wiser, touched by unseen forces. The water whispered her name, soft as a sigh.
+      </p>
+      <p>
+        On the far bank, mushrooms glowed faintly, illuminating an overgrown path. Compelled, she followed it, feeling the soil sink beneath her boots. Each step revealed strange carvings on tree trunks—symbols she could not read, yet felt deeply, as if they spoke directly to her bones.
+      </p>
+      <p>
+        A breeze carried the scent of lavender and pine. The air was thick with secrets, promises, and forgotten stories. Mara realized that the forest had a rhythm, a pulse, and if she listened closely, she could hear it beneath the ordinary sounds: the rustle of leaves, the distant drip of water, the flutter of wings.
+      </p>
+      <p>
+        Suddenly, she came upon a fallen log, ancient and covered in moss. Sitting there, she closed her eyes and let the forest surround her. Visions of long-gone travelers, of hidden groves and moonlit clearings, drifted past. It was as if the forest had absorbed every story ever whispered into its depths and now offered them to her in fragments.
+      </p>
+      <p>
+        When she opened her eyes, a small creature—a hare with silver-tipped fur—watched her curiously. Its gaze was calm, wise, almost human in its understanding. Mara felt no fear. Instead, she felt that she had been chosen, for reasons unknown, to witness the forest’s living memory.
+      </p>
+      <p>
+        By the time dawn crept over the horizon, painting the sky with pale gray and violet, Mara emerged from the forest. She carried with her not a single object, but countless stories, whispers, and the quiet knowledge that the world was deeper, stranger, and more alive than she had ever imagined.
+      </p>
+      <p>
+        And though she returned to the village, nothing could erase the sensation of the forest’s heartbeat lingering in her chest. Each night thereafter, she would feel the pull of the shadows, the invitation of the trees, and know that the forest was always watching, always waiting for the next story to unfold.
+      </p>
+    </article>
   </main>
 
-  <!-- JavaScript -->
   <script>
-    // Page navigation
-    const menuButtons = document.querySelectorAll('.menu-item');
-    const pages = document.querySelectorAll('.page');
-    const sidebar = document.querySelector('.sidebar');
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
 
-    menuButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const pageId = 'page-' + button.dataset.page;
-        pages.forEach(page => page.classList.remove('active'));
-        const targetPage = document.getElementById(pageId);
-        if(targetPage) targetPage.classList.add('active');
-        menuButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        sidebar.classList.remove('open');
-      });
+    menuBtn.addEventListener('click', () => {
+      menuOverlay.classList.add('open');
     });
 
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const closeBtn = document.getElementById('close-btn');
-
-    hamburger.addEventListener('click', e => {
-      sidebar.classList.add('open');
-      e.stopPropagation();
-    });
-
-    closeBtn.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener('click', e => {
-      if(window.innerWidth <= 899 && sidebar.classList.contains('open')) {
-        if(!sidebar.contains(e.target) && e.target !== hamburger){
-          sidebar.classList.remove('open');
-        }
-      }
+    closeMenu.addEventListener('click', () => {
+      menuOverlay.classList.remove('open');
     });
   </script>
 
