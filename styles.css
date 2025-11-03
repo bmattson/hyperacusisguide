@@ -8,7 +8,7 @@
   --article: #393939;
   --focus: rgba(255, 255, 255, 0.06);
   --logo: #7dc895;
-  --ear: #c76041;
+  --ear: #007acc;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -199,9 +199,22 @@ main article li {
   }
 
   header .logo {
-    padding-left: 7px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-left: 7px;
+  color: var(--text);
+}
 
-  }
+header .logo i {
+  font-size: 1.1rem;
+  color: var(--text);
+  background-color: var(--ear);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
 
   nav#sidebar {
     top: 60px; /* below header */
