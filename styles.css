@@ -21,9 +21,13 @@
   font-family: 'Inter', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* prevent rubber-band scroll on iOS */
+}
+
 body {
-  display: flex;
-  min-height: 100vh;
+  display: block; /* disable flex for body to avoid iOS issues */
   background-color: var(--bg);
   color: var(--text);
 }
@@ -34,9 +38,9 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   height: 60px;
   background-color: var(--panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,6 +85,8 @@ nav#sidebar {
   top: 0;
   height: 100%;
   font-size: 0.8rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
 }
 
 nav#sidebar ul {
@@ -97,7 +103,7 @@ nav#sidebar ul li a {
   padding: 0.5rem 1rem;
   display: block;
   border-radius: 0.25rem;
-  transition: background 0s;
+  transition: background 0.2s;
 }
 
 nav#sidebar ul li a:hover {
@@ -117,11 +123,14 @@ nav#sidebar ul li a.active {
 
 /* Main content */
 main {
-  flex: 1;
   margin-left: 260px;
-  margin-top: 4.8rem;
+  margin-top: 60px; /* leave space for fixed header */
   margin-right: 25px;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  height: calc(100vh - 60px); /* full height minus header */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* momentum scrolling on iOS */
+  padding: 1rem 0;
 }
 
 main article {
@@ -129,12 +138,10 @@ main article {
   background: var(--article);
   font-size: 0.8rem;
   line-height: 1.7;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 0.6rem;
   color: var(--text);
+  margin: 0 auto;
 }
 
 /* Headings inside article */
@@ -172,10 +179,13 @@ main article li {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+
   #hamburger {
     display: block;
-    padding-right:5px;
-    color: var(--text);
+  }
+
+  header .logo {
+    padding-left: 10px;
   }
 
   nav#sidebar {
@@ -194,22 +204,16 @@ main article li {
     transform: translateY(0);
   }
 
-  header .logo {
-  padding-left: 10px;
-}
-
   main {
-    margin-left: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    height: calc(100vh - 60px);
+    padding: 0.5rem 1rem;
   }
 
   main article {
-  background: transparent;
-  font-size: 0.8rem;
-  line-height: 1.7;
-  padding-left: 0rem;
-  padding-right: 0rem;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-  color: var(--text);
-}
+    background: transparent;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
 }
