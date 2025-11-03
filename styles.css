@@ -27,6 +27,7 @@ html, body {
   padding: 0;
   background-color: var(--bg);
   overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -55,7 +56,7 @@ header .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   padding-left: 20px;
   color: var(--text);
@@ -63,7 +64,10 @@ header .logo {
 
 header .logo i {
   font-size: 1.1rem;
-  color: var(--text);
+  color: var(--bg);
+  background-color: var(--ear);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
 }
 
 /* Hamburger button (only visible on mobile) */
@@ -106,7 +110,7 @@ nav#sidebar ul li a {
   padding: 0.5rem 1rem;
   display: block;
   border-radius: 0.25rem;
-  transition: background 0.2s;
+  transition: background 0s;
 }
 
 nav#sidebar ul li a:hover {
@@ -128,7 +132,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto; /* fills remaining space under header */
   margin-left: 260px;
-  margin-top: 54px; /* header height */
+  margin-top: 60px; /* header height */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0;
@@ -148,7 +152,7 @@ main article {
   background: var(--bg);
   font-size: 0.8rem;
   line-height: 1.7;
-  padding: 1.5rem 2rem;
+  padding: 17px 2rem;
   border-radius: 0.6rem;
   color: var(--accent);
   margin: 0; /* left-aligned */
