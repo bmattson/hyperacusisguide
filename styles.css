@@ -1,11 +1,11 @@
 /* Root variables */
 :root {
-  --bg: #323232;
-  --panel: #323232;
+  --bg: #252526;
+  --panel: #2d2d30;
   --text: #e0e0e0;
   --hover: rgba(255, 255, 255, 0.08);
   --accent: #b0b0b0;
-  --article: #393939;
+  --article: #252526;
   --focus: rgba(255, 255, 255, 0.06);
   --logo: #7dc895;
   --ear: #007acc;
@@ -114,17 +114,17 @@ nav#sidebar ul li a {
 }
 
 nav#sidebar ul li a:hover {
-  background-color: var(--hover);
+  background-color: var(--panel);
   color: var(--text);
 }
 
 nav#sidebar ul li a:focus {
-  background-color: var(--focus);
+  background-color: var(--panel);
   color: var(--text);
 }
 
 nav#sidebar ul li a.active {
-  background-color: var(--focus);
+  background-color: var(--panel);
   color: var(--text);
 }
 
@@ -225,7 +225,7 @@ header .logo i {
     transition: transform 0.3s ease;
     padding-top: 1rem;
     font-size: 0.9rem;
-    background-color: var(--panel); /* visible */
+    background-color: var(--bg); /* visible */
     z-index: 1100; /* above main content */
   }
 
