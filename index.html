@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyperacusis Guide - Precautionary Guide</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1 class="logo">
-    <i class="fa-solid fa-ear-listen"></i>
     Hyperacusis Guide</h1>
     <button id="hamburger">&#9776;</button>
   </header>
@@ -159,6 +160,7 @@
 
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
     });
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -171,19 +173,6 @@
     }
   });
 
-  function setMainHeight() {
-  const headerHeight = 60; // height of your header in px
-  const vh = window.innerHeight; // actual visible viewport
-  const main = document.querySelector('main');
-  main.style.minHeight = `${vh - headerHeight}px`;
-}
-
-// Run on page load
-setMainHeight();
-
-// Run on resize/orientation change
-window.addEventListener('resize', setMainHeight);
-window.addEventListener('orientationchange', setMainHeight);
 
   </script>
 </body>
