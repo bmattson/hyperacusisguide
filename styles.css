@@ -198,52 +198,41 @@ main article li {
 
 /* ---------- Mobile Styles ---------- */
 @media (max-width: 768px) {
-  /* ---------- Header ---------- */
+  /* Header scrolls on mobile */
   header {
-    position: fixed;      /* keep header at top */
-    top: 0;
-    left: 0;
-    right: 0;
+    position: static;
     height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background-color: var(--header);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    z-index: 1200;
   }
 
-  header .logo {
-    padding-left: 7px;
-    font-size: 1.1rem;
-    font-weight: 500;
+  main {
+    margin: 0;
+    height: auto;
+    padding: 1rem;
   }
 
   #hamburger {
     display: block;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    color: var(--text);
-    cursor: pointer;
   }
 
-  /* ---------- Sidebar (Mobile Overlay) ---------- */
+  header .logo {
+    padding-left: 7px;
+  }
+
+  /* Sidebar overlays content */
   nav#sidebar {
-    position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
     height: 100vh;
-    background-color: var(--bg);
-    padding-top: 94px; /* leave space for header */
-    padding-bottom: 94px;
+    width: 100%;
+    padding-top: 94px;
+    padding-bottom: 300px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    overflow-y: auto;                  /* enable scroll */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    font-size: 0.9rem;
+    background-color: var(--bg);
     z-index: 1100;
+    overflow-y: auto;               /* Sidebar scrollable */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;            /* Only vertical scroll */
   }
 
   nav#sidebar.open {
@@ -252,42 +241,38 @@ main article li {
 
   nav#sidebar ul li a {
     padding: 0.8rem 1rem;
-    display: block;
   }
 
-  /* ---------- Main Content ---------- */
-  main {
-    margin: 0;
-    padding: 1rem;
-    margin-top: 70px; /* avoid being hidden behind header */
-    flex: 1 1 auto;
+  /* Disable hover on mobile links */
+  nav#sidebar ul li a:hover,
+  nav#sidebar ul li a:focus {
+    background-color: unset;
+    color: var(--accent);
   }
 
   main article {
     background: transparent;
     padding: 0.5rem;
+    margin-bottom: 0;
     font-size: 0.9rem;
     border-radius: 0.6rem;
-  }
-
-  main article h1 {
-    font-size: 1.1rem;
   }
 
   main article h2 {
     font-size: 0.9rem;
   }
 
-  /* ---------- Lock background scroll when menu is open ---------- */
+  /* Prevent body scroll when menu is open */
   body.menu-open {
     position: fixed;
     width: 100%;
     height: 100vh;
-    overflow: hidden; /* prevent main content scroll */
+    overflow-y: hidden;            /* Lock body scroll */
+    overscroll-behavior: contain;  /* Prevent scroll chain to body */
   }
 
-  body.menu-open nav#sidebar {
-    overflow-y: auto;                  /* allow menu scroll */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  body.menu-open header {
+    height: 70px !important;
+    flex-shrink: 0 !important;
   }
 }
