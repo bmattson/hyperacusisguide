@@ -228,7 +228,7 @@ header .logo i {
     height: calc(100% - 60px);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    padding-top: 20px;
+    padding-top: 30px;
     font-size: 0.9rem;
     background-color: var(--menu); /* visible */
     z-index: 1100; /* above main content */
