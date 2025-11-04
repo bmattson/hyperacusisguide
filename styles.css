@@ -38,6 +38,24 @@ body {
   color: var(--text);
 }
 
+.link {
+  color: #74b9ff;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: #74b9ff;
+}
+
+.link:hover {
+  color: #74b9ff;
+  text-decoration: underline;
+}
+
+.link:active {
+  color: #74b9ff;
+}
+
 /* ---------- Header (Desktop) ---------- */
 header {
   position: fixed;
@@ -206,6 +224,7 @@ main article li {
     height: 100vh;
     width: 100%;
     padding-top: 94px;
+    padding-bottom: 50px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     font-size: 0.9rem;
