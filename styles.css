@@ -163,7 +163,7 @@ main article {
 main article h2 {
   font-size: 0.875rem;
   font-weight: 600;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   margin-bottom: 0.6rem;
   color: var(--text);
 }
@@ -253,5 +253,13 @@ header .logo i {
     font-size: 0.9rem;
     border-radius: 0.6rem;
   }
+
+  main article h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
 
 }
