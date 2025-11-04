@@ -245,7 +245,6 @@ header .logo i {
   main {
     margin-left: 0;
     margin-right: 0;
-    height: calc(100vh - 60px);
     padding: 1rem 1rem;
   }
 
