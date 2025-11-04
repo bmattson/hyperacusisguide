@@ -243,24 +243,6 @@ main article li {
     padding: 0.8rem 1rem;
   }
 
-nav#sidebar ul li a {
-  -webkit-tap-highlight-color: transparent; /* iOS & Android Chrome */
-}
-
-/* Keep hover disabled except for active item */
-nav#sidebar ul li a:not(.active):hover {
-  background-color: var(--bg);
-  color: var(--accent);
-}
-
-/* Active and focus/tap state */
-nav#sidebar ul li a.active,
-nav#sidebar ul li a:focus,
-nav#sidebar ul li a:active {
-  background-color: var(--hover);
-  color: var(--text);
-}
-
   main article {
     background: transparent;
     padding: 0.5rem;
