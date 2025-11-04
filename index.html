@@ -171,6 +171,20 @@
     }
   });
 
+  function setMainHeight() {
+  const headerHeight = 60; // height of your header in px
+  const vh = window.innerHeight; // actual visible viewport
+  const main = document.querySelector('main');
+  main.style.minHeight = `${vh - headerHeight}px`;
+}
+
+// Run on page load
+setMainHeight();
+
+// Run on resize/orientation change
+window.addEventListener('resize', setMainHeight);
+window.addEventListener('orientationchange', setMainHeight);
+
   </script>
 </body>
 </html>
