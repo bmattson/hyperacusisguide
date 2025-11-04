@@ -198,40 +198,52 @@ main article li {
 
 /* ---------- Mobile Styles ---------- */
 @media (max-width: 768px) {
-  /* Header scrolls on mobile */
+  /* ---------- Header ---------- */
   header {
-    position: static;
+    position: fixed;      /* keep header at top */
+    top: 0;
+    left: 0;
+    right: 0;
     height: 70px;
-  }
-
-  main {
-    margin: 0;
-    height: auto;
-    padding: 1rem;
-  }
-
-  #hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--header);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 1200;
   }
 
   header .logo {
     padding-left: 7px;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 
-  /* Sidebar overlays content */
+  #hamburger {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  /* ---------- Sidebar (Mobile Overlay) ---------- */
   nav#sidebar {
+    position: fixed;
     top: 0;
-    height: 100vh;
+    left: 0;
     width: 100%;
-    padding-top: 94px;
-    padding-bottom: 100px;
+    height: 100vh;
+    background-color: var(--bg);
+    padding-top: 94px; /* leave space for header */
+    padding-bottom: 94px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    font-size: 0.9rem;
-    background-color: var(--bg);
+    overflow-y: auto;                  /* enable scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
     z-index: 1100;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   nav#sidebar.open {
@@ -240,30 +252,42 @@ main article li {
 
   nav#sidebar ul li a {
     padding: 0.8rem 1rem;
+    display: block;
+  }
+
+  /* ---------- Main Content ---------- */
+  main {
+    margin: 0;
+    padding: 1rem;
+    margin-top: 70px; /* avoid being hidden behind header */
+    flex: 1 1 auto;
   }
 
   main article {
     background: transparent;
     padding: 0.5rem;
-    margin-bottom: 0;
     font-size: 0.9rem;
     border-radius: 0.6rem;
+  }
+
+  main article h1 {
+    font-size: 1.1rem;
   }
 
   main article h2 {
     font-size: 0.9rem;
   }
 
-  /* ---------- Lock scroll when menu is open ---------- */
+  /* ---------- Lock background scroll when menu is open ---------- */
   body.menu-open {
     position: fixed;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* prevent main content scroll */
   }
 
-  body.menu-open header {
-    height: 70px !important;
-    flex-shrink: 0 !important;
+  body.menu-open nav#sidebar {
+    overflow-y: auto;                  /* allow menu scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
   }
 }
