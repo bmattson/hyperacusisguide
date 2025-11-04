@@ -60,16 +60,17 @@ header .logo {
   gap: 0.6rem;
   font-size: 1.1rem;
   font-weight: 500;
-  padding-left: 20px;
-  color: var(--text);
+  padding-left: 16px;
+  color: var(--accent);
 }
 
 header .logo i {
-  font-size: 1.1rem;
-  color: var(--text);
-  background-color: var(--ear);
-  padding: 0.3rem;
+  font-size: 1.3rem;
+  color: var(--accent);
+  background-color: transparent;
+  padding: 0rem;
   border-radius: 0.2rem;
+  margin-right: -3px;
 }
 
 /* ---------- Hamburger Button ---------- */
@@ -78,7 +79,7 @@ header .logo i {
   margin-right: 4px;
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--accent);
   cursor: pointer;
   display: none;
 }
