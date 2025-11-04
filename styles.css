@@ -5,10 +5,12 @@
   --text: #e0e0e0;
   --hover: #424146;
   --accent: #b0b0b0;
-  --article: #252526;
-  --focus: #424146;
+  --article: #2A2A2B;
+  --focus: #38373A;
   --logo: #7dc895;
   --ear: #007acc;
+  --header: #252526;
+  --menu: #2A2A2B;
   color-scheme: dark;
 }
 
@@ -44,7 +46,7 @@ header {
   left: 0;
   right: 0;
   height: 60px;
-  background-color: var(--article);
+  background-color: var(--header);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
@@ -84,7 +86,7 @@ header .logo i {
 /* Sidebar */
 nav#sidebar {
   width: 260px;
-  background-color: var(--article);
+  background-color: var(--menu);
   padding-top: 70px; /* leave space for header */
   padding-left: 20px;
   padding-right: 20px;
@@ -125,7 +127,7 @@ nav#sidebar ul li a:focus {
 }
 
 nav#sidebar ul li a.active {
-  background-color: var(--panel);
+  background-color: var(--focus);
   color: var(--text);
 }
 
@@ -227,7 +229,7 @@ header .logo i {
     transition: transform 0.3s ease;
     padding-top: 1rem;
     font-size: 0.9rem;
-    background-color: var(--bg); /* visible */
+    background-color: var(--menu); /* visible */
     z-index: 1100; /* above main content */
   }
 
