@@ -3,12 +3,13 @@
   --bg: #252526;
   --panel: #2d2d30;
   --text: #e0e0e0;
-  --hover: rgba(255, 255, 255, 0.08);
+  --hover: #424146;
   --accent: #b0b0b0;
   --article: #252526;
-  --focus: rgba(255, 255, 255, 0.06);
+  --focus: #424146;
   --logo: #7dc895;
   --ear: #007acc;
+  color-scheme: dark;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -84,7 +85,7 @@ header .logo i {
 nav#sidebar {
   width: 260px;
   background-color: var(--article);
-  padding-top: 70px; /* leave space for header */
+  padding-top: 74px; /* leave space for header */
   padding-left: 20px;
   padding-right: 20px;
   flex-shrink: 0;
@@ -101,25 +102,25 @@ nav#sidebar ul {
 }
 
 nav#sidebar ul li {
-  margin: 0.4rem 0;
+  margin: 0.2rem 0;
 }
 
 nav#sidebar ul li a {
   text-decoration: none;
   color: var(--accent);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   display: block;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   transition: background 0s;
 }
 
 nav#sidebar ul li a:hover {
-  background-color: var(--panel);
+  background-color: var(--hover);
   color: var(--text);
 }
 
 nav#sidebar ul li a:focus {
-  background-color: var(--panel);
+  background-color: var(--focus);
   color: var(--text);
 }
 
@@ -132,7 +133,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto; /* fills remaining space under header */
   margin-left: 260px;
-  margin-top: 60px; /* header height */
+  margin-top: 62px; /* header height */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0;
