@@ -79,7 +79,7 @@ header .logo i {
   margin-right: 4px;
   background: none;
   border: none;
-  color: var(--accent);
+  color: var(--text);
   cursor: pointer;
   display: none;
 }
