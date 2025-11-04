@@ -247,6 +247,11 @@ nav#sidebar ul li a {
   -webkit-tap-highlight-color: transparent; /* stops dark flash on mobile */
 }
 
+nav#sidebar ul li a:not(.active) {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* ensures tap registers only when not scrolling */
+}
+
 /* Only apply hover for devices with hover (desktop) */
 @media (hover: hover) {
   nav#sidebar ul li a:not(.active):hover {
