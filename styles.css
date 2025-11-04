@@ -60,7 +60,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 260px;
   right: 0;
   height: 60px;
   background-color: var(--header);
