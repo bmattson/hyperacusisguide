@@ -230,6 +230,8 @@ main article li {
     font-size: 0.9rem;
     background-color: var(--bg);
     z-index: 1100;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   nav#sidebar.open {
