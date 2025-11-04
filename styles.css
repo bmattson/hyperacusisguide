@@ -61,12 +61,12 @@ header .logo {
   font-size: 1.1rem;
   font-weight: 500;
   padding-left: 16px;
-  color: var(--accent);
+  color: var(--text);
 }
 
 header .logo i {
   font-size: 1.3rem;
-  color: var(--accent);
+  color: var(--text);
   background-color: transparent;
   padding: 0rem;
   border-radius: 0.2rem;
