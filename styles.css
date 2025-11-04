@@ -243,16 +243,25 @@ main article li {
     padding: 0.8rem 1rem;
   }
 
-  nav#sidebar ul li a:not(.active):hover {
-  background-color: var(--bg);
-  color: var(--accent);
+nav#sidebar ul li a {
+  -webkit-tap-highlight-color: transparent; /* stops dark flash on mobile */
 }
 
-  nav#sidebar ul li a:focus{
-  background-color: var(--hover);
-  color: var(--text);
+/* Only apply hover for devices with hover (desktop) */
+@media (hover: hover) {
+  nav#sidebar ul li a:not(.active):hover {
+    background-color: var(--hover);
+    color: var(--text);
   }
+}
 
+/* Active or focused link */
+nav#sidebar ul li a.active,
+nav#sidebar ul li a:focus,
+nav#sidebar ul li a:active {
+  background-color: var(--hover); /* this is the lighter color you want */
+  color: var(--text);
+}
   main article {
     background: transparent;
     padding: 0.5rem;
