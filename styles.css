@@ -59,7 +59,7 @@ header .logo {
   align-items: center;
   gap: 0.6rem;
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
   padding-left: 20px;
   color: var(--text);
 }
@@ -149,7 +149,7 @@ main article {
 
 main article h1 {
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 0.6rem 0;
   color: var(--text);
 }
