@@ -150,7 +150,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto;
   margin-left: 240px;
-  margin-bottom: 0;
+  margin-bottom: 2rem;
   margin-top: 60px; /* header height */
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -180,9 +180,16 @@ main article h1 {
 }
 
 main article h2 {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin: 0.7rem 0 0.6rem 0;
+  color: var(--text);
+}
+
+main article h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 1rem 0 0.6rem 0;
   color: var(--text);
 }
 
@@ -192,8 +199,16 @@ main article p {
 
 main article ul {
   margin: 0.5rem 0 1.2rem 1.4rem;
-  padding-left: 1.2rem;
+  padding-left: 0.5rem;
   list-style-position: outside;
+  list-style-type: disc;
+}
+
+main article ul ul {
+  margin: 0.5rem 0 0rem 1.4rem;
+  padding-left: 0.5rem;
+  list-style-position: outside;
+  list-style-type: disc;
 }
 
 main article li {
