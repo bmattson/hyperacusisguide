@@ -150,6 +150,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto;
   margin-left: 240px;
+  margin-bottom: 0;
   margin-top: 60px; /* header height */
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -214,7 +215,7 @@ article img.full-width-image {
   display: block;
   width: 100%;
   height: auto;          /* Keeps the image’s aspect ratio */
-  border-radius: 1rem; /* Optional: matches your rounded style */
+  border-radius: 0.6rem; /* Optional: matches your rounded style */
    border: 0px solid rgba(255, 255, 255, 0.15);
   padding:0px;
   background-color: var(--menu);
@@ -231,7 +232,10 @@ article img.full-width-image {
   }
 
   main {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    margin-right: 0;
+    margin-left: 0;
     height: auto;
     padding: 1rem;
   }
