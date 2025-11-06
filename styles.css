@@ -1,17 +1,17 @@
 /* ---------- Root Variables ---------- */
 :root {
-  --bg: #252526;
-  --panel: #2d2d30;
-  --text: #e0e0e0;
-  --hover: #424146;
-  --accent: #b0b0b0;
-  --article: #2A2A2B;
-  --focus: #38373A;
-  --logo: #7dc895; /* Accent color for logo/branding */
-  --ear: #007acc; /* Secondary accent */
-  --header: #252526;
-  --menu: #2A2A2B;
-  color-scheme: dark;
+    --bg: #252526;
+    --panel: #2d2d30;
+    --text: #e0e0e0;
+    --hover: #424146;
+    --accent: #b0b0b0;
+    --article: #2A2A2B;
+    --focus: #38373A;
+    --logo: #7dc895; /* Accent color for logo/branding */
+    --ear: #007acc; /* Secondary accent */
+    --header: #252526;
+    --menu: #2A2A2B;
+    color-scheme: dark;
 }
 
 /* ---------- Fonts ---------- */
@@ -19,333 +19,338 @@
 
 /* ---------- Global Reset & Body Styles ---------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg);
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  color: var(--text);
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
 }
 
 /* Link Styles */
 .link {
-  color: #74b9ff;
-  text-decoration: none;
+    color: #74b9ff;
+    text-decoration: none;
 }
 
 .link:visited {
-  color: #74b9ff;
+    color: #74b9ff;
 }
 
 .link:hover {
-  color: #74b9ff;
-  text-decoration: underline;
+    color: #74b9ff;
+    text-decoration: underline;
 }
 
 .link:active {
-  color: #74b9ff;
+    color: #74b9ff;
 }
 
 /* ---------- Header (Desktop) ---------- */
 header {
-  position: fixed;
-  top: 0;
-  left: 260px; /* Aligned with sidebar width */
-  right: 0;
-  z-index: 1200;
-  height: 60px;
-  background-color: var(--header);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 260px; /* Aligned with sidebar width */
+    right: 0;
+    z-index: 1200;
+    height: 60px;
+    background-color: var(--header);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
 header .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding-left: 16px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
 }
 
 header .logo i {
-  font-size: 1rem;
-  color: var(--text);
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0.2rem;
-  margin-right: -3px;
+    font-size: 1rem;
+    color: var(--text);
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0.2rem;
+    margin-right: -3px;
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
 #hamburger {
-  display: none; /* Hidden on desktop */
-  font-size: 2rem;
-  margin-right: 2px;
-  padding-bottom: 4px;
-  background: none;
-  border: none;
-  color: var(--text);
-  cursor: pointer;
+    display: none; /* Hidden on desktop */
+    font-size: 2rem;
+    margin-right: 2px;
+    padding-bottom: 4px;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
 }
 
 /* ---------- Sidebar (Desktop) ---------- */
 nav#sidebar {
-  position: fixed;
-  top: 0;
-  width: 260px;
-  height: 100%;
-  padding: 80px 20px 0 20px;
-  background-color: var(--menu);
-  font-size: 0.8rem;
-  font-weight: 500;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    padding: 80px 20px 0 20px;
+    background-color: var(--menu);
+    font-size: 0.8rem;
+    font-weight: 500;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 nav#sidebar ul {
-  list-style: none;
+    list-style: none;
 }
 
 nav#sidebar ul li {
-  margin: 0;
+    margin: 0;
 }
 
 nav#sidebar ul li a {
-  display: block;
-  padding: 0.6rem 1rem;
-  text-decoration: none;
-  color: var(--accent);
-  border-radius: 0.3rem;
+    display: block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    color: var(--accent);
+    border-radius: 0.3rem;
 }
 
 
 nav#sidebar ul li a.active {
-  background-color: var(--focus);
-  color: var(--text);
+    background-color: var(--focus);
+    color: var(--text);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  nav#sidebar ul li a:hover {
-    background-color: var(--hover);
-    color: var(--text);
-  }
+    nav#sidebar ul li a:hover {
+        background-color: var(--hover);
+        color: var(--text);
+    }
 }
 
 /* ---------- Main Content (Desktop) ---------- */
 .quote{
-  font-size:0.9rem;
-  font-weight:400;
+    font-size:0.9rem;
+    font-weight:400;
 }
 
 main {
-  flex: 1 1 auto;
-  margin-left: 260px; /* Offset for fixed sidebar */
-  margin-top: 60px; /* Offset for fixed header */
-  margin-bottom: 2rem;
-  padding: 0;
-  position: relative;
-  z-index: 100;
-  background: var(--bg);
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
+    flex: 1 1 auto;
+    margin-left: 260px; /* Offset for fixed sidebar */
+    margin-top: 60px; /* Offset for fixed header */
+    margin-bottom: 2rem;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    background: var(--bg);
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
 }
 
 main article {
-  max-width: 700px;
-  margin: 0;
-  padding: 23px 2rem;
-  background: var(--bg);
-  border-radius: 0.6rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  line-height: 1.7;
-  color: var(--accent);
+    max-width: 700px;
+    margin: 0;
+    padding: 23px 2rem;
+    background: var(--bg);
+    border-radius: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--accent);
 }
 
 main article h1 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0 0 0.6rem 0;
-  color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 0.6rem 0;
+    color: var(--text);
 }
 
 main article h2 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin: 0.7rem 0 0.6rem 0;
-  color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0.7rem 0 0.6rem 0;
+    color: var(--text);
 }
 
 main article h3 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin: 1rem 0 0.6rem 0;
-  color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 1rem 0 0.6rem 0;
+    color: var(--text);
 }
 
 main article p {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 main article ul {
-  margin: 0.5rem 0 1.2rem 1.4rem;
-  padding-left: 0.5rem;
-  list-style-position: outside;
-  list-style-type: disc;
+    margin: 0.5rem 0 1.2rem 1.4rem;
+    padding-left: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
 }
 
 main article ul ul {
-  margin: 0.5rem 0 0rem 1.4rem;
-  padding-left: 0.5rem;
-  list-style-position: outside;
-  list-style-type: disc;
+    margin: 0.5rem 0 0rem 1.4rem;
+    padding-left: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
 }
 
 main article li {
-  margin-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 .page-break {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 1px;
-  margin: 1.5rem 0;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin: 1.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 article img.full-width-image {
-  display: block;
-  width: 90%;
-  height: auto;
-  margin: 0rem 0 0.5rem 0rem;
-  padding: 0;
-  border: 0px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0.6rem;
-  background-color: var(--menu);
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 0rem 0 0.5rem 0rem;
+    padding: 0;
+    border: 0px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.6rem;
+    background-color: var(--menu);
 }
 
 article img.full-width-image:last-child {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
 @media (max-width: 768px) {
-  /* Header scrolls on mobile */
-  header {
-    position: static;
-    height: 70px;
-    left: 0; /* Reset desktop fixed position */
-  }
+    /* Header scrolls on mobile */
+    header {
+        position: static;
+        height: 70px;
+        left: 0; /* Reset desktop fixed position */
+    }
 
-  /* Show hamburger button */
-  #hamburger {
-    display: block;
-  }
+    /* Show hamburger button */
+    #hamburger {
+        display: block;
+    }
 
-  header .logo {
-    padding-left: 7px;
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
+    header .logo {
+        padding-left: 7px;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
 
-  header .logo i {
-    font-size: 1.3rem;
-  }
+    header .logo i {
+        font-size: 1.3rem;
+    }
 
-  /* Main content resets */
-  main {
-    margin: 0;
-    margin-bottom: 4rem;
-    height: auto;
-    padding: 1rem;
-  }
+    /* Main content resets */
+    main {
+        margin: 0;
+        margin-bottom: 4rem;
+        height: auto;
+        padding: 1rem;
+    }
 
-  /* Sidebar styling for mobile overlay */
-  nav#sidebar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    padding-top: 94px;
-    padding-bottom: 0px;
-    transform: translateY(-100%); /* Start off-screen */
-    transition: transform 0.3s ease;
-    background-color: var(--bg);
-    font-size: 0.9rem;
-    z-index: 1100;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-  }
+    /* Sidebar styling for mobile overlay */
+    nav#sidebar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        padding-top: 94px;
+        padding-bottom: 0px;
+        transform: translateY(-100%); /* Start off-screen */
+        transition: transform 0.3s ease;
+        background-color: var(--bg);
+        font-size: 0.9rem;
+        z-index: 1100;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
 
-  /* Sidebar open state */
-  nav#sidebar.open {
-    transform: translateY(0);
-  }
+    /* Sidebar open state */
+    nav#sidebar.open {
+        transform: translateY(0);
+    }
 
-  /* Mobile link tap feedback */
-  nav#sidebar ul li a {
-    padding: 0.8rem 1rem;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-  }
+    /* Mobile link tap feedback */
+    nav#sidebar ul li a {
+        padding: 0.8rem 1rem;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+    }
 
-  nav#sidebar ul li a.tap-active {
-    background-color: var(--focus);
-    color: var(--text);
-    transition: background-color 0s;
-  }
+    nav#sidebar ul li a.tap-active {
+        background-color: var(--focus);
+        color: var(--text);
+        transition: background-color 0s;
+    }
 
-  /* Main content article adjustments */
-  main article {
-    max-width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 0;
-    background: transparent;
-    border-radius: 0.6rem;
-    font-size: 0.9rem;
-  }
+    /* Main content article adjustments */
+    main article {
+        max-width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 0;
+        background: transparent;
+        border-radius: 0.6rem;
+        font-size: 0.9rem;
+    }
 
-  main article h2 {
-    font-size: 0.9rem;
-  }
+    main article h2 {
+        font-size: 0.9rem;
+    }
 
-  article img.full-width-image {
-    width: 100%;
-  }
+    article img.full-width-image {
+        width: 100%;
+    }
 
-  /* Body scroll lock when menu is open */
-  body.menu-open {
-    position: fixed;
-    top: 0; /* Ensures no content shift/flicker */
-    left: 0; /* Ensures no content shift/flicker */
-    width: 100%;
-    height: 100vh;
-    overflow-y: hidden; /* Locks body scroll */
-    overscroll-behavior: contain; /* Prevents scroll chain to body */
-  }
+    /* ?? Body scroll lock when menu is open (Fixed) */
+    body.menu-open {
+        position: fixed;
+        top: 0; 
+        left: 0; 
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden; /* Locks body scroll */
+        overscroll-behavior: contain; 
+    }
 
-  body.menu-open header {
-    height: 70px !important;
-    flex-shrink: 0 !important;
-  }
+    /* ?? ADDITIONAL FIX: Prevents main content scrollbar from showing/working */
+    body.menu-open main {
+        overflow: hidden; 
+    }
+
+    body.menu-open header {
+        height: 70px !important;
+        flex-shrink: 0 !important;
+    }
 }
