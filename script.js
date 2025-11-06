@@ -11,9 +11,9 @@ hamburger.addEventListener('click', () => {
 
     if (isMenuOpen) {
         // --- CLOSING THE MENU ---
-        sidebar.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        document.documentElement.classList.remove('menu-open');
+        sidebar.classList.add('open');
+        document.body.classList.add('menu-open');
+        document.documentElement.classList.add('menu-open');
 
         // Restore scroll position
         window.scrollTo(0, scrollPosition);
