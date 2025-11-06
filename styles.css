@@ -233,15 +233,19 @@ main article li {
 
 article img.full-width-image {
   display: block;
-  width: 80%;
+  width: 90%;
   height: auto;          /* Keeps the image’s aspect ratio */
   border-radius: 0.6rem; /* Optional: matches your rounded style */
    border: 0px solid rgba(255, 255, 255, 0.15);
   padding:0px;
   background-color: var(--menu);
-  margin-top:1.5rem;
+  margin-top:0rem;
+  margin-bottom:0.5rem;/* Adds spacing above and below */
+  margin-left: 0rem;
+}
+
+article img.full-width-image:last-child {
   margin-bottom:2rem;/* Adds spacing above and below */
-  margin-left: 2rem;
 }
 
 /* ---------- Mobile Styles ---------- */
@@ -288,7 +292,7 @@ nav#sidebar ul li a {
 nav#sidebar ul li a.tap-active {
   background-color: var(--focus);
   color: var(--text);
-  transition: background-color 0.15s; /* smooth brief feedback */
+  transition: background-color 0s; /* smooth brief feedback */
 }
 
   nav#sidebar {
@@ -327,6 +331,9 @@ nav#sidebar ul li a.tap-active {
   main article h2 {
     font-size: 0.9rem;
   }
+
+  article img.full-width-image {
+  width: 100%;
 
   /* Prevent body scroll when menu is open */
   body.menu-open {
