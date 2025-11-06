@@ -5,7 +5,7 @@ const sidebar = document.getElementById('sidebar');
 // Variable to store the scroll position when the menu is open
 let scrollPosition = 0; 
 
-// ---------- Hamburger Menu Toggle (FINAL REVISION for iOS) ----------
+// ---------- Hamburger Menu Toggle (FINAL REVISION for iOS Scroll Lock) ----------
 hamburger.addEventListener('click', () => {
     // Check if the menu is currently open by checking the sidebar class
     const isMenuOpen = sidebar.classList.contains('open');
@@ -28,8 +28,8 @@ hamburger.addEventListener('click', () => {
         // 1. Record current scroll position
         scrollPosition = window.scrollY;
         
-        // 2. Set scroll lock styles via JS to work with CSS
-        // This is the core fix: it shifts the body up by the negative scroll amount and fixes it.
+        // 2. Set scroll lock styles via JS. This is the core fix for iOS visual scrollbar.
+        // It shifts the body up by the negative scroll amount and fixes it.
         document.body.style.top = `-${scrollPosition}px`;
         document.body.style.position = 'fixed';
         

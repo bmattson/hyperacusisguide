@@ -278,7 +278,7 @@ article img.full-width-image:last-child {
         padding: 1rem;
     }
 
-    /* ?? SIDEBAR ADJUSTMENT: Use position: absolute relative to the fixed body viewport */
+    /* ?? SIDEBAR ADJUSTMENT: Position absolute so it scrolls independently of the fixed body */
     nav#sidebar {
         position: absolute; 
         top: 0;
