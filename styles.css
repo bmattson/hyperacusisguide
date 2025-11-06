@@ -60,7 +60,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 240px;
+  left: 260px;
   right: 0;
   height: 60px;
   background-color: var(--header);
@@ -105,7 +105,7 @@ header .logo i {
 
 /* ---------- Sidebar (Desktop) ---------- */
 nav#sidebar {
-  width: 240px;
+  width: 260px;
   background-color: var(--menu);
   padding: 80px 20px 0 20px;
   position: fixed;
@@ -146,10 +146,28 @@ nav#sidebar ul li a.active {
   }
 }
 
+nav#sidebar ul li a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+/* Tap feedback class for mobile */
+nav#sidebar ul li a.tap-active {
+  background-color: var(--focus);
+  color: var(--text);
+  transition: background-color 0s; /* smooth brief feedback */
+}
+
 /* ---------- Main Content (Desktop) ---------- */
+.quote{
+    font-size:1rem;
+    font-weight:300;
+}
+
 main {
   flex: 1 1 auto;
-  margin-left: 240px;
+  margin-left: 260px;
   margin-bottom: 2rem;
   margin-top: 60px; /* header height */
   overflow-y: visible;
@@ -283,7 +301,7 @@ nav#sidebar ul li a {
 nav#sidebar ul li a.tap-active {
   background-color: var(--focus);
   color: var(--text);
-  transition: background-color 0.15s; /* smooth brief feedback */
+  transition: background-color 0s; /* smooth brief feedback */
 }
 
   nav#sidebar {
