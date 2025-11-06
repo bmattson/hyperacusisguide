@@ -196,7 +196,7 @@ article img.full-width-image {
     display: block;
     width: 90%;
     height: auto;
-    margin: 0 0 0.5rem 0;
+    margin: 1.5rem 0 0 0;
     padding: 0;
     border-radius: 0.6rem;
     background-color: var(--menu);
@@ -204,6 +204,11 @@ article img.full-width-image {
 
 article img.full-width-image:last-child {
     margin-bottom: 2rem;
+}
+
+.quote {
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
