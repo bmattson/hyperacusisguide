@@ -2,13 +2,42 @@
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 
-// ---------- Hamburger Menu Toggle (UPDATED for Scroll Lock) ----------
+// Variable to store the scroll position when the menu is open
+let scrollPosition = 0; 
+
+// ---------- Hamburger Menu Toggle (FINAL REVISION for iOS) ----------
 hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-    
-    // Toggles the class on BOTH body and html for reliable scroll locking on mobile
-    document.body.classList.toggle('menu-open'); 
-    document.documentElement.classList.toggle('menu-open'); // Target <html> element
+    // Check if the menu is currently open by checking the sidebar class
+    const isMenuOpen = sidebar.classList.contains('open');
+
+    if (isMenuOpen) {
+        // --- CLOSING THE MENU ---
+        sidebar.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        document.documentElement.classList.remove('menu-open');
+
+        // Restore scroll position
+        window.scrollTo(0, scrollPosition);
+        
+        // Remove inline styles used for scroll locking
+        document.body.style.removeProperty('top');
+        document.body.style.removeProperty('position');
+
+    } else {
+        // --- OPENING THE MENU ---
+        // 1. Record current scroll position
+        scrollPosition = window.scrollY;
+        
+        // 2. Set scroll lock styles via JS to work with CSS
+        // This is the core fix: it shifts the body up by the negative scroll amount and fixes it.
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.position = 'fixed';
+        
+        // 3. Apply classes for overflow:hidden and menu visibility
+        sidebar.classList.add('open');
+        document.body.classList.add('menu-open');
+        document.documentElement.classList.add('menu-open');
+    }
 });
 
 // ---------- Highlight Current Page in Sidebar ----------

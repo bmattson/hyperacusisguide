@@ -333,24 +333,22 @@ article img.full-width-image:last-child {
         width: 100%;
     }
 
-    /* ?? REVISED SCROLL LOCK (Final Fix): Ensures immediate scroll lock and hiding */
+    /* ?? FINAL iOS SCROLL LOCK METHOD (CSS PART) */
     body.menu-open,
     html.menu-open {
-        /* Critical: Hides the scrollbar and stops all scrolling on the viewport */
+        /* Prevents all scrolling on the viewport */
         overflow-y: hidden; 
         height: 100vh;
+        overscroll-behavior: none; 
     }
-
-    /* This targets the <html> element specifically, forcing a fixed viewport to prevent scroll jump/visual scrollbar */
-    html.menu-open {
-        position: fixed; 
-        top: 0;
-        left: 0;
+    
+    /* When the body has menu-open, position and top are set via JS for the lock */
+    body.menu-open {
         width: 100%;
-        overscroll-behavior: none; /* Prevents pull-to-refresh */
+        /* Position: fixed and top: -Xpx are now set via JavaScript */
     }
 
-    /* Prevents the main content from showing its own scrollbar when locked */
+    /* Ensures the main content cannot scroll or show its own scrollbar */
     body.menu-open main {
         overflow: hidden; 
         height: 100%;
