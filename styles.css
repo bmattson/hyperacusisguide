@@ -333,18 +333,19 @@ article img.full-width-image:last-child {
         width: 100%;
     }
 
-    /* ?? Body scroll lock when menu is open (Fixed) */
-    body.menu-open {
-        position: fixed;
-        top: 0; 
-        left: 0; 
-        width: 100%;
-        height: 100vh;
+    /* ?? REVISED SCROLL LOCK: Targets HTML and Body for reliable scroll hiding */
+    body.menu-open,
+    html.menu-open {
         overflow-y: hidden; /* Locks body scroll */
+        height: 100vh;
         overscroll-behavior: contain; 
+        position: fixed; /* Use fixed with overflow hidden for iOS support */
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
-    /* ?? ADDITIONAL FIX: Prevents main content scrollbar from showing/working */
+    /* ?? Prevents main content scrollbar from showing/working */
     body.menu-open main {
         overflow: hidden; 
     }

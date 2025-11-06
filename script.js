@@ -2,28 +2,27 @@
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 
-// ---------- Hamburger Menu Toggle ----------
+// ---------- Hamburger Menu Toggle (UPDATED for Scroll Lock) ----------
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('open');
-    // Toggles the class that locks background scroll on mobile
+    
+    // Toggles the class on BOTH body and html for reliable scroll locking on mobile
     document.body.classList.toggle('menu-open'); 
+    document.documentElement.classList.toggle('menu-open'); // Target <html> element
 });
 
 // ---------- Highlight Current Page in Sidebar ----------
-// Gets the filename from the URL (e.g., 'about.html' or defaults to 'index.html')
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 document.querySelectorAll('#sidebar ul li a').forEach(link => {
     const linkPage = link.getAttribute('href');
-    // Adds 'active' class if the link's href matches the current page filename
     link.classList.toggle('active', linkPage === currentPage);
 });
 
 // ---------- Add Tap Feedback on Touch Devices ----------
 document.querySelectorAll('nav#sidebar ul li a').forEach(link => {
     link.addEventListener('touchstart', () => {
-        // highlight immediately on tap
-        link.classList.add('tap-active'); 
+        link.classList.add('tap-active'); // highlight immediately on tap
     });
 
     link.addEventListener('touchend', () => {
