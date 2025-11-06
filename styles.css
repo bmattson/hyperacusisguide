@@ -278,10 +278,12 @@ article img.full-width-image:last-child {
         padding: 1rem;
     }
 
-    /* Sidebar styling for mobile overlay */
+    /* ?? SIDEBAR ADJUSTMENT: Use position: absolute relative to the fixed body viewport */
     nav#sidebar {
-        position: fixed;
+        position: absolute; 
         top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 100vh;
         padding-top: 94px;
@@ -291,7 +293,7 @@ article img.full-width-image:last-child {
         background-color: var(--bg);
         font-size: 0.9rem;
         z-index: 1100;
-        overflow-y: auto;
+        overflow-y: auto; /* CRITICAL: Allows the menu content to scroll */
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
     }
@@ -342,10 +344,9 @@ article img.full-width-image:last-child {
         overscroll-behavior: none; 
     }
     
-    /* When the body has menu-open, position and top are set via JS for the lock */
+    /* Body receives position: fixed and top: -Xpx via JavaScript */
     body.menu-open {
         width: 100%;
-        /* Position: fixed and top: -Xpx are now set via JavaScript */
     }
 
     /* Ensures the main content cannot scroll or show its own scrollbar */
