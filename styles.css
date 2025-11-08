@@ -268,7 +268,7 @@ article img.full-width-image:last-child {
     nav#sidebar ul li a.tap-active {
         background-color: var(--focus);
         color: var(--text);
-        transition: background-color 0.15s;
+        transition: background-color 0.2s;
     }
 
     main article {
