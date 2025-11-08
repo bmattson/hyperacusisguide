@@ -285,6 +285,11 @@ article img.full-width-image:last-child {
     main article h2 { font-size: 1rem; font-weight: 600; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
     main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
+    .quote {
+    font-weight: 400;
+    font-size: 0.95rem;
+    }
+
     article img.full-width-image { width: 100%; }
 
     /* ---------- HIDE SCROLLBARS ON MOBILE ---------- */
