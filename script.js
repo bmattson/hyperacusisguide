@@ -65,11 +65,23 @@ sidebarLinks.forEach(link => {
     });
 });
 
-// ---------- Add Tap Feedback on Touch Devices ----------
+// ---------- Add Tap Feedback on Touch Devices (SINGLE SET ONLY) ----------
 sidebarLinks.forEach(link => {
-    link.addEventListener('touchstart', () => link.classList.add('tap-active'));
-    link.addEventListener('touchend', () => setTimeout(() => link.classList.remove('tap-active'), 150));
-    link.addEventListener('touchmove', () => link.classList.remove('tap-active'));
+    link.addEventListener('touchstart', () => {
+        link.classList.add('tap-active');
+    });
+
+    link.addEventListener('touchend', () => {
+        setTimeout(() => link.classList.remove('tap-active'), 180);
+    });
+
+    link.addEventListener('touchcancel', () => {
+        link.classList.remove('tap-active');
+    });
+
+    link.addEventListener('touchmove', () => {
+        link.classList.remove('tap-active');
+    });
 });
 
 // ---------- Close sidebar when clicking outside (optional) ----------
@@ -103,7 +115,7 @@ document.addEventListener('keydown', (e) => {
 // ---------- Animate Sidebar Links (staggered fade) ----------
 function animateSidebarLinks(open) {
     sidebarLinks.forEach((link, index) => {
-        link.style.transition = `opacity 0.3s ease ${index * 0.05}s, transform 0.3s ease ${index * 0.05}s`;
+        link.style.transition = `opacity 0.2s ease ${index * 0.05}s, transform 0.2s ease ${index * 0.05}s, background-color 0.3s ease`;
         if (open) {
             link.style.opacity = '1';
             link.style.transform = 'translateY(0)';
