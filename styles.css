@@ -295,6 +295,7 @@ article img.full-width-image-silverstein {
     padding: 0;
     border-radius: 0.6rem;
     background-color: var(--menu);
+}
 
 article img.full-width-image {
     display: block;
