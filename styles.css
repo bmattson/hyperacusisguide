@@ -350,16 +350,16 @@ video {
   position: absolute;  /* position relative to button */
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--text);
-  border-radius: 1px;
+  border-radius: 1.25px;
   transition: all 0.4s ease;
 }
 
 /* Position each line */
-#hamburger span:nth-child(1) { top: 4px; }
+#hamburger span:nth-child(1) { top: 3px; }
 #hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-#hamburger span:nth-child(3) { bottom: 4px; }
+#hamburger span:nth-child(3) { bottom: 3px; }
 
 /* Animate to X with a little left shift */
 #hamburger.active span:nth-child(1) {
