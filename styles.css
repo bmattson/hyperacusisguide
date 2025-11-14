@@ -375,6 +375,12 @@ video {
   z-index: 1300;
 }
 
+#hamburger:hover {
+          -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+}
+
 /* Stack lines exactly in the center */
 #hamburger span {
   display: block;
@@ -541,6 +547,14 @@ html {
 
 /* Hover styling */
 .back-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+          -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+  border-color: #e0e0e0;
+}
+
+.back-to-top:focus {
   background-color: rgba(255, 255, 255, 0.06);
   border-color: #e0e0e0;
 }
