@@ -30,7 +30,7 @@ html, body {
     padding: 0;
     background-color: var(--bg);
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -69,8 +69,8 @@ header .logo {
     align-items: center;
     gap: 0.6rem;
     padding-left: 16px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 500;
     color: var(--text);
 }
 
@@ -87,7 +87,35 @@ header .logo i {
   width: 40px;
   height: 40px;
   margin-left: -13px;
-  margin-right: -17px;
+  margin-right: -18px;
+}
+
+.a{
+ font-weight: 500;
+}
+
+.u{
+ font-weight: 300;
+}
+
+.i{
+ font-weight: 400;
+}
+
+.d{
+ font-weight: 500;
+}
+
+.e{
+ font-weight: 500;
+
+}
+
+.guide-word {
+  display: inline; /* or inline-block */
+}
+.guide-word span {
+  display: inline; /* ensures no spacing */
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
@@ -252,12 +280,16 @@ main article {
     border-radius: 0.6rem;
     font-size: 0.85rem;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.5rem;
     color: var(--accent);
 }
 
-main article h1 { font-size: 1.1rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
-main article h2 { font-size: 0.9rem; font-weight: 700; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
+strong {
+  font-weight: 600; /* browser default */
+}
+
+main article h1 { font-size: 1.1rem; font-weight: 400; margin: 0 0 0.6rem 0; color: var(--text); }
+main article h2 { font-size: 0.9rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
 main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
 main article p { margin-bottom: 1rem; }
@@ -303,7 +335,7 @@ article img.full-width-image {
     display: block;
     width: 100%;
     height: auto;
-    margin: 1rem 0 0 0;
+    margin: 1.3rem 0 0 0;
     padding: 0;
     border-radius: 0.6rem;
     background-color: var(--menu);
@@ -353,14 +385,14 @@ video {
 @media (max-width: 768px) {
     header { position: static; height: 70px; left: 0; }
     #hamburger { display: block; }
-    header .logo { padding-left: 7px; font-size: 1.1rem; font-weight: 600; }
+    header .logo { padding-left: 7px; font-size: 1.2rem; font-weight: 500;}
     header .logo i { font-size: 1.3rem; }
 
  .logo-image{
   width: 50px;
   height: 50px;
   margin-left: -15px;
-  margin-right: -19px;
+  margin-right: -20px;
   }
 
   /* Hamburger button lines */
@@ -472,12 +504,13 @@ video {
         margin-bottom: 0;
         background: transparent;
         border-radius: 0.6rem;
-        font-size: 0.95rem;
-        font-weight: 400;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.7rem;
     }
 
-    main article h1 { font-size: 1.1rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
-    main article h2 { font-size: 1rem; font-weight: 600; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
+    main article h1 { font-size: 1.2rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); line-height: 1.9rem;}
+    main article h2 { font-size: 1.05rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: var(--text); line-height: 1.7rem;}
     main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
     .custom-font {
@@ -485,7 +518,6 @@ video {
       font-size: 3.5rem;
       line-height: 70px;
 }
-
 
     .quote {
     font-weight: 400;
@@ -539,8 +571,8 @@ html {
   width: 10px;
   height: 10px;
   margin-top: 5px;
-  border-left: 3px solid var(--text, #e0e0e0);
-  border-bottom: 3px solid var(--text, #e0e0e0);
+  border-left: 2px solid var(--text, #e0e0e0);
+  border-bottom: 2px solid var(--text, #e0e0e0);
   border-radius: 0px;
   transform: rotate(135deg);
   transition: border-color 0.3s ease;
