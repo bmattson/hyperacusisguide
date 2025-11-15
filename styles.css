@@ -341,7 +341,7 @@ video {
 }
 .centered-text {
       
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 50px;
     margin-left:-10px;
     font-weight: normal;
@@ -536,11 +536,12 @@ html {
 /* CSS up arrow */
 .back-to-top::before {
   content: "";
-  width: 10px;
-  height: 10px;
-  margin-top: 5px;
-  border-left: 3px solid var(--text, #e0e0e0);
-  border-bottom: 3px solid var(--text, #e0e0e0);
+  width: 9px;
+  height: 9px;
+  margin-top: 7px;
+  border-left: 2px solid var(--text, #e0e0e0);
+  border-bottom: 2px solid var(--text, #e0e0e0);
+  border-radius: 1px;
   transform: rotate(135deg);
   transition: border-color 0.3s ease;
 }
