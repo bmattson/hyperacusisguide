@@ -145,7 +145,7 @@ function matchHeight() {
   const containerWidth = img1.parentElement.clientWidth;
   
   // scale first image to max 50% of container width
-  img1.style.width = '54%';
+  img1.style.width = '54.35%';
   img1.style.height = 'auto';
 
   // match second image height dynamically
