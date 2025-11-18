@@ -158,46 +158,28 @@ function matchHeight() {
 window.addEventListener('load', matchHeight);
 window.addEventListener('resize', matchHeight);
 
-
 function copyAnchorLink(button) {
-  // Get the target anchor ID
   const anchorId = button.getAttribute('data-anchor');
-  
-  // Build the full URL
   const url = window.location.origin + window.location.pathname + '#' + anchorId;
 
-  // Configuration Constants
-  const DISPLAY_TIME_MS = 2000; // How long the overlay is fully visible
-  const FADE_TIME_MS = 300;   // Must match the CSS transition time (0.3s)
-
-  // Copy to clipboard
   navigator.clipboard.writeText(url)
     .then(() => {
-      const overlay = document.getElementById('copy-overlay');
+      // Detect mobile devices (iOS/Android)
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      // 1. Prepare to Fade In
-      // Must set display property first, before adding 'show' class
-      overlay.style.display = 'flex'; 
-      
-      // Forces a repaint/reflow before applying the transition for the fade-in
-      requestAnimationFrame(() => {
-        // Fade In overlay (opacity: 0 -> 1)
+      if (isMobile) {
+        // Use native alert on mobile
+        alert('Link copied: ' + url);
+      } else {
+        // Show overlay on desktop
+        const overlay = document.getElementById('copy-overlay');
         overlay.classList.add('show');
-      });
 
-      // 2. Start the Fade Out after display time
-      setTimeout(() => {
-        // Initiate the CSS transition (opacity: 1 -> 0)
-        overlay.classList.remove('show'); 
-
-        // 3. CRITICAL FIX: Wait for the transition to finish, then hide
-        setTimeout(() => {
-          // This forces a complete cleanup of the fixed element's rendering layer
-          overlay.style.display = 'none'; 
-        }, FADE_TIME_MS);
-
-      }, DISPLAY_TIME_MS);
+        // Fade out after 2 seconds
+        setTimeout(() => overlay.classList.remove('show'), 2000);
+      }
     })
-    .catch(err => console.error('Failed to copy failed: ', err));
+    .catch(err => console.error('Failed to copy: ', err));
 }
+
 
