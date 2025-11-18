@@ -648,6 +648,24 @@ article img.full-width-image:first-child {
     color: var(--text);
 }
 
+.orange{
+color: #F8B683;
+font-weight: 400;
+font-size: 0.9rem;
+}
+
+.green{
+color: #93D0A7;
+font-weight: 400;
+font-size: 0.9rem;
+}
+
+.red{
+color: #DE7176;
+font-weight: 400;
+font-size: 0.9rem;
+}
+
     main article {
         max-width: 100%;
         padding: 0.5rem;
