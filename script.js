@@ -158,8 +158,15 @@ function matchHeight() {
 window.addEventListener('load', matchHeight);
 window.addEventListener('resize', matchHeight);
 
-function copyLink() {
-  const url = 'https://www.hyperacusisguide.org/hyperacusis.html#severity';
+
+function copyAnchorLink(button) {
+  // Get the target anchor ID from the data attribute
+  const anchorId = button.getAttribute('data-anchor');
+  
+  // Build full URL with the anchor
+  const url = window.location.origin + window.location.pathname + '#' + anchorId;
+  
+  // Copy to clipboard
   navigator.clipboard.writeText(url)
     .then(() => {
       const overlay = document.getElementById('copy-overlay');
