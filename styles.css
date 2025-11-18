@@ -265,17 +265,22 @@ border-bottom-right-radius: 0.6rem;
 .orange{
 color: #F8B683;
 font-weight: 400;
+font-size: 0.7rem;
 }
 
 .green{
 color: #93D0A7;
 font-weight: 400;
+font-size: 0.7rem;
 }
 
 .red{
 color: #DE7176;
 font-weight: 400;
+font-size: 0.7rem;
 }
+
+
 
 .row1 {
   background: rgb(176,176,176, 0.1);
