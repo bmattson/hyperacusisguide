@@ -602,6 +602,26 @@ article img.full-width-image:first-child {
   font-size: 16px; /* Adjust this to make the icon bigger or smaller */
   color: var(--accent);  /* Single color */
   cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* remove tap highlight */
+  -webkit-touch-callout: none;              /* disable long-press menu */
+  -webkit-user-select: none;                /* prevent text selection */
+  user-select: none;                        /* standard */
+  outline: none;                            /* remove focus outline */
+  -webkit-appearance: none;                 /* remove default iOS button styling */
+  background-color: initial;     
+}
+
+.link-icon:hover{
+  font-size: 16px; /* Adjust this to make the icon bigger or smaller */
+  color: var(--accent);  /* Single color */
+  cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* remove tap highlight */
+  -webkit-touch-callout: none;              /* disable long-press menu */
+  -webkit-user-select: none;                /* prevent text selection */
+  user-select: none;                        /* standard */
+  outline: none;                            /* remove focus outline */
+  -webkit-appearance: none;                 /* remove default iOS button styling */
+  background-color: initial;     
 }
 
  .logo-image{
