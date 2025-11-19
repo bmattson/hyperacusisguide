@@ -163,31 +163,30 @@ function copyAnchorLink(button) {
   const anchorId = button.getAttribute('data-anchor');
   const url = window.location.origin + window.location.pathname + '#' + anchorId;
   
-  // Constants based on your CSS and requirement
+  // Configuration Constants
   const DISPLAY_TIME_MS = 2000;
-  const FADE_TIME_MS = 300; // Matches your CSS transition time
+  const FADE_TIME_MS = 300; // Matches your CSS transition time (0.3s)
 
   navigator.clipboard.writeText(url)
     .then(() => {
       const overlay = document.getElementById('copy-overlay');
 
       // 1. Show the overlay
-      // Ensure display is 'flex' before starting the fade-in
       overlay.style.display = 'flex'; 
       overlay.classList.add('show');
 
-      // 2. Start the fade-out after the display time
+      // 2. Start the fade-out after display time
       setTimeout(() => {
         // Initiate the CSS transition (opacity: 1 -> 0)
         overlay.classList.remove('show'); 
 
         // 3. CRITICAL Cleanup: Wait for the 0.3s fade to finish, then hide
         setTimeout(() => {
-          // This forces a complete cleanup of the rendering layer
+          // Forces a complete cleanup of the rendering layer
           overlay.style.display = 'none'; 
         }, FADE_TIME_MS);
 
       }, DISPLAY_TIME_MS);
     })
-    .catch(err => console.error('Failed to copy: ', err));
+    .catch(err => console.error('Failed to copy failed: ', err));
 }

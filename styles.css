@@ -296,39 +296,43 @@ font-size: 0.8rem;
 }
 
 #copy-overlay {
-  /* Positioning the element relative to the content area */
+  /* Positioning and Sizing for Full Screen Coverage */
   position: fixed;
+  top: 0;
+  left: 0;
   
-  /* 1. Define the TOP-LEFT corner based on the safe area insets */
-  top: env(safe-area-inset-top);
-  left: env(safe-area-inset-left);
+  /* Use viewport units for true full-screen sizing */
+  width: 100vw; 
+  height: 100vh; 
   
-  /* 2. Calculate the WIDTH and HEIGHT to fill the space *between* the insets */
-  /* Subtracts the left and right insets from the total viewport width (100vw) */
-  width: calc(100vw - env(safe-area-inset-left) - env(safe-area-inset-right));
+  /* iOS-specific full height hack for better compatibility */
+  min-height: -webkit-fill-available;
   
-  /* Subtracts the top and bottom insets from the total viewport height (100vh) */
-  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-  
-  /* The rest of your styles */
+  /* Layout and Styling */
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   
-  /* Keep the hardware acceleration fix for better repainting within the boundary */
+  /* CRITICAL Fix: Force GPU layer for clean cleanup on fade-out */
   transform: translateZ(0); 
   
   /* Transitions and Initial State */
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none; /* Allows clicks on elements underneath */
   transition: opacity 0.3s ease;
+  
+  /* Optional: Use padding to push *content* away from safe areas 
+     if your message shouldn't be covered by the notch/home indicator. 
+     The background will still cover the entire area. */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 #copy-overlay.show {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: all; /* Blocks clicks while visible */
 }
 
 #copy-message {
