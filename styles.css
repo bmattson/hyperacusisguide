@@ -704,8 +704,8 @@ article img.full-width-image:first-child {
 
 .border{
     background-color: rgba(255, 255, 255, 0.06);
-    border: 0px solid;
-    border-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
     border-radius: 0.9rem;
     padding: 9px 11px 9px 11px; 
     margin-right:4px;
@@ -739,7 +739,7 @@ article img.full-width-image:first-child {
 
     nav#sidebar ul li a {
         padding: 0.9rem 1rem 0.9rem 1.2rem;
-     
+    
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -830,7 +830,7 @@ html {
   right: 20px;
   width: 45px;
   height: 45px;
-  border: 0px solid var(--accent, #b0b0b0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   background-color: #333334;
   display: flex;
