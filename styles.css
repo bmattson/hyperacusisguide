@@ -349,7 +349,7 @@ font-size: 0.8rem;
 .link-icon {
   display: inline-block;    /* keep it inline */
   vertical-align: middle;   /* align with text vertically */
-  font-size: 14px;
+  font-size: 13px;
   margin-left: 0px;         /* small space after text */
   color: var(--accent);
   cursor: pointer;
