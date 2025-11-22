@@ -163,6 +163,8 @@ nav#sidebar ul li a {
     -webkit-tap-highlight-color: transparent;
 }
 
+
+
 @media (hover: none) and (pointer: coarse) {
     nav#sidebar ul li a:focus {
         outline: none;
@@ -187,6 +189,39 @@ nav#sidebar ul li a.active {
         background-color: var(--hover);
         color: var(--text);
     }
+}
+
+nav#sidebar ul li a.no-decoration,
+nav#sidebar ul li a.no-decoration:hover,
+nav#sidebar ul li a.no-decoration:active,
+nav#sidebar ul li a.no-decoration:focus,
+nav#sidebar ul li a.no-decoration:focus-visible {
+    display: block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    color: var(--test);
+    border-radius: 0.3rem;
+    -webkit-tap-highlight-color: transparent;
+
+    /* Remove all visual feedback */
+    outline: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    text-decoration: none !important;
+}
+
+nav#sidebar ul li.icon-item {
+    display: inline-block;       /* Prevents 100% width */
+    width: auto;                 /* Shrinks to fit the SVG */
+    padding: 0;                  /* Remove the block padding */
+}
+
+.nav-icon{
+    fill: var(--accent);
+}
+
+.nav-icon:hover{
+    fill: var(--text);
 }
 
 /* ---------- Main Content (Desktop) ---------- */
