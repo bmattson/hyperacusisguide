@@ -228,6 +228,8 @@ nav#sidebar ul li.icon-item {
     width: 20px;
 }
 
+
+
 /* ---------- Main Content (Desktop) ---------- */
 
 .nested-columns {
@@ -443,7 +445,17 @@ padding:10px 20px 10px 20px;
   border: 1px solid #dc0000;
   border-width: 1px 1px 1px 1px; 
   border-radius: 0.6rem;
-  padding:10px 20px 10px 20px;
+  padding:12px 20px 10px 20px;
+  font-style: normal; 
+  color: var(--accent);
+}
+
+.ldl-test{
+   background: rgb(220,0,0, 0.1);
+  border: 1px solid #dc0000;
+  border-width: 1px 1px 1px 1px; 
+  border-radius: 0.6rem;
+  padding:15px 20px 16px 20px;
   font-style: normal; 
   color: var(--accent);
 
@@ -458,6 +470,20 @@ padding:10px 20px 10px 20px;
 
 .table ul:last-child {
     margin: 0.5rem 0 0.8rem 1.4rem;
+    padding-left: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.table-ldl ul li {
+    margin: 0 0 0 0;
+    padding-left: 0rem;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.table-ldl ul:last-child {
+    margin: 0.5rem 0 0rem 1.4rem;
     padding-left: 0.5rem;
     list-style-position: outside;
     list-style-type: disc;
@@ -877,6 +903,14 @@ font-size: 0.9rem;
 
 .warning{
   padding:20px 20px 16px 20px;
+}
+
+.ldl-test{
+
+  border-radius: 0.6rem;
+  padding:20px 20px 22px 20px;
+
+
 }
 
 .table {
