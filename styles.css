@@ -791,7 +791,7 @@ article img.full-width-image:first-child {
         transform: translateY(-100%);
         transition: transform 0.3s ease;
         background-color: var(--bg);
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.2rem;
         z-index: 1100;
         overflow-y: auto;
@@ -842,14 +842,14 @@ nav#sidebar ul li a.no-decoration:focus-visible {
 
 .nav-icon{
     fill: var(--accent);
-    height: 26px;
-    width: 26px;
+    height: 24px;
+    width: 24px;
 }
 
 .nav-icon:hover{
     fill: var(--text);
-    height: 26px;
-    width: 26px;
+    height: 24px;
+    width: 24px;
 }
 
 .orange{
