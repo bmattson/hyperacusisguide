@@ -32,7 +32,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyperacusis Guide - Precautionary Guide</title>
   <meta name="description" content="A precautionary guide for new hyperacusis patients offering safe strategies to prevent worsening, support recovery, and navigate early treatment decisions.">
+
+
+  <script>
+    (function() {
+        const THEME_KEY = 'userTheme';
+        const html = document.documentElement;
+        
+        // --- DEFINING PATHS as RELATIVE (as confirmed) ---
+        const DARK_LOGO_PATH = 'logo.png'; 
+        const LIGHT_LOGO_PATH = 'light-logo.png'; 
+        
+        let storedTheme = localStorage.getItem(THEME_KEY);
+        let targetTheme = storedTheme;
+        
+        // 1. Determine the required theme (User choice > System default)
+        if (!targetTheme) {
+            targetTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // 2. Apply theme class instantly (NO WAITING NEEDED for <html>)
+        if (targetTheme === 'light') {
+            html.classList.add('light-mode');
+        } else {
+            html.classList.remove('light-mode');
+        }
+
+        // 3. Set the logo source AFTER the DOM has loaded the <img> element.
+        // We use DOMContentLoaded here to be absolutely sure the element is available.
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.querySelector('.logo-image');
+            if (logo) {
+                if (targetTheme === 'light') {
+                    logo.src = LIGHT_LOGO_PATH;
+                } else {
+                    logo.src = DARK_LOGO_PATH;
+                }
+            }
+        });
+    })();
+</script>
+
   <link rel="stylesheet" href="styles.css">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -54,14 +96,32 @@
 </div>
   <a id="top"></a> 
   <header>
+    <div class="h-width">
     <h1 class="logo">
-    <img src="logo.png" class="logo-image"><span class="guide-word"><span class="a">Hyperacusis</span> Guide</span></h1>
+    <img class="logo-image" src="logo.png"><span class="guide-word"><span class="a">Hyperacusis</span> Guide</span></h1>
+<div class="dark-mode-align" id="dark-mode-toggle">
+    <svg class="dark-icon-size" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+    <title>ic_fluent_dark_theme_24_regular</title>
+    <desc>Created with Sketch.</desc>
+    
+    <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g class="dark-mode" id="ic_fluent_dark_theme_24_regular" fill-rule="nonzero">
+            <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z">
+
+</path>
+        </g>
+    </g>
+</svg>
+</div>
+</div>
 <div class="border" id="hamburger-wrapper">
   <button id="hamburger" aria-label="Menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
+</div>
 </div>
   </header>
 

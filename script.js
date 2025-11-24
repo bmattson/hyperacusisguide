@@ -5,7 +5,57 @@ const sidebar = document.getElementById('sidebar');
 const sidebarLinks = sidebar.querySelectorAll('a');
 const backToTop = document.querySelector('.back-to-top');
 
+// Theme & Logo Elements (Synchronized with HTML <head> snippet)
+const darkModeToggle = document.querySelector('.dark-mode-align'); // Selects the clickable div
+const logoImage = document.querySelector('.logo-image'); 
+const html = document.documentElement; // Represents the <html> tag
+
+const THEME_KEY = 'userTheme'; // Key for localStorage
+// --- DEFINE LOGO PATHS HERE (ADJUST FOLDER NAME IF NECESSARY) ---
+const DARK_LOGO_PATH = 'logo.png'; 
+const LIGHT_LOGO_PATH = 'light-logo.png'; 
+
 let scrollPosition = 0;
+
+// ---------- Dark/Light Mode Logic (Fixed and Synchronized) ----------
+
+/**
+ * Toggles the theme, applies the class, saves the preference, and swaps the logo.
+ * @param {boolean} isLight - True for light mode, false for dark mode.
+ */
+function setTheme(isLight) {
+    if (isLight) {
+        // Switch to LIGHT MODE
+        html.classList.add('light-mode');
+        localStorage.setItem(THEME_KEY, 'light');
+        
+        // LOGO SWAP: light-logo.png
+        if (logoImage) {
+            logoImage.src = LIGHT_LOGO_PATH;
+        }
+    } else {
+        // Switch to DARK MODE
+        html.classList.remove('light-mode');
+        localStorage.setItem(THEME_KEY, 'dark');
+
+        // LOGO SWAP: logo.png (default)
+        if (logoImage) {
+            logoImage.src = DARK_LOGO_PATH;
+        }
+    }
+}
+
+// 2. Add Event Listener for Manual Toggle
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => { 
+        // Check if the current theme is light (by checking the class on <html>)
+        const isCurrentlyLight = html.classList.contains('light-mode');
+        
+        // Toggle the theme: if currently light, switch to dark (isLight = false), and vice versa.
+        setTheme(!isCurrentlyLight); 
+    });
+}
+
 
 // ---------- Hamburger Menu Toggle ----------
 function toggleMenu() {
@@ -34,10 +84,12 @@ function closeMenu() {
     document.body.classList.remove('menu-open');
     document.documentElement.classList.remove('menu-open');
 
-    window.scrollTo(0, scrollPosition);
-
+    // Remove the fixed positioning first
     document.body.style.removeProperty('top');
     document.body.style.removeProperty('position');
+    
+    // Immediately restore the original scroll position
+    window.scrollTo(0, scrollPosition);
 
     animateSidebarLinks(false);
 }
@@ -56,7 +108,7 @@ function animateSidebarLinks(open) {
     });
 }
 
-// ---------- Highlight Current Page ----------
+// ---------- Highlight Current Page & Touch Feedback ----------
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 sidebarLinks.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === currentPage);
@@ -128,30 +180,37 @@ window.addEventListener('scroll', () => {
     backToTop.classList.toggle('show', window.scrollY > 100);
 });
 
-// ---------- Initialize ----------
+// ---------- Initialize (Runs on DOMContentLoaded) ----------
 document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
 });
 
 // ---------- Wrapper click triggers hamburger ----------
-hamburgerWrapper.addEventListener('click', () => {
-    toggleMenu();
-});
+if (hamburgerWrapper) {
+    hamburgerWrapper.addEventListener('click', () => {
+        toggleMenu();
+    });
+}
 
+
+// --- Image Matching Function ---
 const img1 = document.querySelector('.img-1');
 const img2 = document.querySelector('.img-2');
 
 function matchHeight() {
-  const containerWidth = img1.parentElement.clientWidth;
-  
-  // scale first image to max 50% of container width
-  img1.style.width = '54.35%';
-  img1.style.height = 'auto';
+    // Safety check to ensure images exist before trying to match them
+    if (!img1 || !img2) return;
 
-  // match second image height dynamically
-  const h = img1.clientHeight;
-  img2.style.height = `${h}px`;
-  img2.style.width = 'auto';
+    // const containerWidth = img1.parentElement.clientWidth; // Currently unused
+
+    // scale first image to max 50% of container width
+    img1.style.width = '54.35%';
+    img1.style.height = 'auto';
+
+    // match second image height dynamically
+    const h = img1.clientHeight;
+    img2.style.height = `${h}px`;
+    img2.style.width = 'auto';
 }
 
 // run on load and resize
@@ -159,34 +218,36 @@ window.addEventListener('load', matchHeight);
 window.addEventListener('resize', matchHeight);
 
 
+// --- Copy Anchor Link Function ---
 function copyAnchorLink(button) {
-  const anchorId = button.getAttribute('data-anchor');
-  const url = window.location.origin + window.location.pathname + '#' + anchorId;
-  
-  // Configuration Constants
-  const DISPLAY_TIME_MS = 2000;
-  const FADE_TIME_MS = 300; // Matches your CSS transition time (0.3s)
+    const anchorId = button.getAttribute('data-anchor');
+    const url = window.location.origin + window.location.pathname + '#' + anchorId;
+    
+    // Configuration Constants
+    const DISPLAY_TIME_MS = 2000;
+    const FADE_TIME_MS = 300; // Matches your CSS transition time (0.3s)
 
-  navigator.clipboard.writeText(url)
-    .then(() => {
-      const overlay = document.getElementById('copy-overlay');
+    navigator.clipboard.writeText(url)
+        .then(() => {
+            const overlay = document.getElementById('copy-overlay');
+            if (!overlay) return; // Safety check
 
-      // 1. Show the overlay
-      overlay.style.display = 'flex'; 
-      overlay.classList.add('show');
+            // 1. Show the overlay
+            overlay.style.display = 'flex'; 
+            overlay.classList.add('show');
 
-      // 2. Start the fade-out after display time
-      setTimeout(() => {
-        // Initiate the CSS transition (opacity: 1 -> 0)
-        overlay.classList.remove('show'); 
+            // 2. Start the fade-out after display time
+            setTimeout(() => {
+                // Initiate the CSS transition (opacity: 1 -> 0)
+                overlay.classList.remove('show'); 
 
-        // 3. CRITICAL Cleanup: Wait for the 0.3s fade to finish, then hide
-        setTimeout(() => {
-          // Forces a complete cleanup of the rendering layer
-          overlay.style.display = 'none'; 
-        }, FADE_TIME_MS);
+                // 3. CRITICAL Cleanup: Wait for the 0.3s fade to finish, then hide
+                setTimeout(() => {
+                    // Forces a complete cleanup of the rendering layer
+                    overlay.style.display = 'none'; 
+                }, FADE_TIME_MS);
 
-      }, DISPLAY_TIME_MS);
-    })
-    .catch(err => console.error('Failed to copy failed: ', err));
+            }, DISPLAY_TIME_MS);
+        })
+        .catch(err => console.error('Failed to copy failed: ', err));
 }
