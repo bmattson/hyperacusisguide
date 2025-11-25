@@ -28,14 +28,32 @@
     --menu: #71535726;
     color-scheme: light; 
     header .logo {color: #443235};
-    header {border-bottom: 1px solid #000000; background-color: #E6DDDE};
+    header {border-bottom: 1px solid #654A4E; background-color: #E6DDDE};
     main article {font-weight:400};
     #copy-message {color: #ffffff};
     .back-to-top {background-color: #454545};
     nav#sidebar ul li a {color:#443235};
-    main article h1 { font-size: 1.1rem; font-weight: 400; margin: 0 0 0.6rem 0; color: #443235; }
-main article h2 { font-size: 0.9rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: #443235; }
-main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
+    main article h1 {font-weight: 500; margin: 0 0 0.6rem 0; color: #654A4E; }
+main article h2 {font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: #654A4E; }
+main article h3 {font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
+
+.custom-font {
+  color: #654A4E
+}
+
+.thomas {
+   color: #654A4E
+
+}
+
+.link-icon {       /* small space after text */
+  color: var(--654A4E);
+         /* remove the margin-top that causes line break */
+}
+
+.link-icon:hover{
+  color: var(--text);
+}
 
     .link {
     color: #015dc9;
@@ -48,7 +66,7 @@ main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; 
 .link:hover { color: #015dc9; text-decoration: underline; }
 .link:active { color: #015dc9; }
 
-.page-break {border-bottom: 1px solid #443235};
+.page-break {border-bottom: 1px solid #654A4E};
 
 .orange{
 color: #ff8c01;
