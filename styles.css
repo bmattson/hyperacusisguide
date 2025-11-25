@@ -28,10 +28,9 @@
     --menu: #edeae8;
     color-scheme: light; 
     header .logo {color: #534741};
-    header {border-bottom: 1px solid #534741; background-color: var(--header)};
+    header {border-bottom: 1px solid #534741cc; background-color: var(--header)};
     main article {font-weight:400};
     #copy-message {color: #ffffff};
-    .back-to-top {background-color: #454545};
    
     nav#sidebar ul li a {color:#534741};
     main article h1 { font-size: 1.1rem; font-weight: 400; margin: 0 0 0.6rem 0; color: #534741; }
@@ -39,17 +38,17 @@ main article h2 { font-size: 0.9rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0
 main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 body {background: var(--bg)}
     .link {
-    color: #015dc9;
+    color: #305cde;
     text-decoration: none;
 
 }
 
 
-.link:visited { color: #015dc9; }
-.link:hover { color: #015dc9; text-decoration: underline; }
-.link:active { color: #015dc9; }
+.link:visited { color: #305cde; }
+.link:hover { color: #305cde; text-decoration: underline; }
+.link:active { color: #305cde; }
 
-.page-break {border-bottom: 1px solid #534741};
+.page-break {border-bottom: 1px solid #534741cc};
 
 .orange{
 color: #ff8c01;
@@ -66,25 +65,25 @@ color: #ED2938;
     @media (hover: none) and (pointer: coarse) {
     nav#sidebar ul li a:focus {
         outline: none;
-        background-color: #f6f5f4; /* match your tap color */
+        background-color: rgba(255,255,255,0.9); /* match your tap color */
         color: #534741;
     }
 }
 
 nav#sidebar ul li a.tap-active {
-  background-color: #f6f5f4;
+  background-color: rgba(255,255,255,0.9);
   color: #534741;
   transition: background-color 0.2s;
 }
 
 nav#sidebar ul li a.active {
-    background-color: #f6f5f4;
+    background-color: rgba(255,255,255,0.7);
     color: #534741;
 }
 
 @media (hover: hover) and (pointer: fine) {
     nav#sidebar ul li a:hover {
-        background-color: #f6f5f4;
+        background-color: rgba(255,255,255,0.9);
         color: #534741;
     }
 }
