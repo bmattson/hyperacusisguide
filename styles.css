@@ -89,6 +89,22 @@ nav#sidebar ul li a.active {
 }
 
 @media (max-width: 768px) {
+
+    main article {
+        max-width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 0;
+        background: transparent;
+        border-radius: 0.6rem;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+    }
+
+ main article h1 { font-size: 1.2rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); line-height: 1.9rem;}
+    main article h2 { font-size: 1.05rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: var(--text); line-height: 1.7rem;}
+    main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
+
     .border {background-color:#71535726}
     .back-to-top {
 
