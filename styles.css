@@ -296,9 +296,15 @@ header .logo i {
 
 .guide-word {
   display: inline; /* or inline-block */
+
 }
 .guide-word span {
   display: inline; /* ensures no spacing */
+}
+
+.glow{
+     text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.5); /* Outer, more diffused glow */
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
