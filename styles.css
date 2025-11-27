@@ -304,7 +304,7 @@ header .logo i {
 
 .glow{
      text-shadow:
-    0 0 20px rgba(255, 255, 255, 0.5); /* Outer, more diffused glow */
+    0 0 20px rgba(255, 255, 255, 0); /* Outer, more diffused glow */
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
