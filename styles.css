@@ -302,6 +302,7 @@ header .logo i {
 
 .guide-word {
   display: inline; /* or inline-block */
+  font-size: 1.1rem;
 
 }
 .guide-word span {
@@ -451,6 +452,12 @@ nav#sidebar ul li.icon-item {
 }
 
 @media (max-width: 768px) {
+
+.guide-word {
+  display: inline; /* or inline-block */
+  font-size: 1.3rem;
+
+}
 
 .h-width {
  
