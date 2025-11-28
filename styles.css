@@ -12,6 +12,10 @@
     --header: #252526;
     --menu: #2A2A2B;
     color-scheme: dark;
+
+    .a{color:var(--accent);
+    font-weight: 600}
+    .glow{color:var(--text)}
 }
 
 .light-mode {
@@ -31,6 +35,8 @@
     header {border-bottom: 1px solid #534741cc; background-color: var(--header)};
     main article {font-weight:400};
     #copy-message {color: #ffffff};
+
+    .a{opacity:85%}
    
     nav#sidebar ul li a {color:#534741};
     main article h1 { font-size: 1.1rem; font-weight: 400; margin: 0 0 0.6rem 0; color: #534741; }
